@@ -1,20 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const getJobs = createAsyncThunk("get/jobs", async () => {
-    const response = await fetch("https://backend-pes6z6spo-depressions-projects.vercel.app/jobs");
+    const response = await fetch("https://backend-mcr.vercel.app/jobs");
     const data = await response.json();
     return data.jobs;
 });
 
 export const deleteJob = createAsyncThunk("delete/job", async (id) => {
-    await fetch(`https://backend-pes6z6spo-depressions-projects.vercel.app/${id}`, {
+    await fetch(`http://localhost:3001/${id}`, {
         method: 'DELETE',
     });
     return id;
 });
 
 export const addJob = createAsyncThunk("add/job", async (newJob) => {
-    const response = await fetch("https://backend-pes6z6spo-depressions-projects.vercel.app/jobs", {
+    const response = await fetch("http://localhost:3001/jobs", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

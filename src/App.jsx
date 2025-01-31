@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import Header from './components/Header';
 import { getJobs, deleteJob } from './features/jobSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,7 +17,7 @@ const App = () => {
   }, [dispatch]);
 
   const { jobs } = useSelector(state => state.jobs);
-  console.log(jobs);
+  // console.log(jobs);
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
