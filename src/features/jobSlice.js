@@ -7,7 +7,7 @@ export const getJobs = createAsyncThunk("get/jobs", async () => {
 });
 
 export const deleteJob = createAsyncThunk("delete/job", async (id) => {
-    await fetch(`https://backend-mcr.vercel.app/${id}`, {
+    await fetch(`https://backend-mcr.vercel.app/jobs/${id}`, {
         method: 'DELETE',
     });
     return id;
